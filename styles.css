@@ -1,0 +1,215 @@
+/* Reset and font styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+}
+
+/* Body styles */
+body {
+  overflow-x: hidden;
+}
+
+/* Custom color class */
+.green {
+  color: #28a745; /* or your specified color */
+}
+
+/* Hero Section Styles */
+.hero {
+  background: url('flightbg.jpeg') no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.hero-content {
+  z-index: 1;
+  position: relative;
+}
+
+.highlight {
+  color: #28a745;
+}
+
+/* About Us Section */
+.about-section {
+  background-color: #f8f9fa; /* subtle light background */
+}
+
+.about-section h2 {
+  color: #1b4332;
+}
+
+.about-section .btn-success {
+  background-color: #28a745;
+  border: none;
+  color: #fff;
+}
+
+.about-section .btn-success:hover {
+  background-color: #7ac70c;
+  color: #fff;
+}
+
+/* Our Services Section with background image */
+.services-section {
+  /* Replace 'your-background-image.jpg' with your actual image path */
+  background: 
+    linear-gradient(to right, rgba(218, 252, 219, 0.8), rgba(255, 255, 255, 0)), 
+    url('bg.jpg') no-repeat center center/cover;
+  padding: 5em;
+}
+
+/* Section Header Styles */
+.section-header {
+  margin-bottom: 3em;
+}
+
+.section-header h1,
+.section-header h6,
+.section-header button {
+  color: #012e01; /* Your primary color */
+}
+
+.section-header h6 i {
+  color: rgb(72, 213, 47);
+}
+
+/* Section Title */
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.section-title > h1 {
+  font-size: 40px;
+  flex: 1 1 auto;
+}
+
+/* Controls Buttons */
+.controls {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.controls button {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #012e01;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 18px;
+  transition: 0.3s all ease-in-out;
+}
+
+.controls button:hover {
+  background-color: #012e01;
+  color: white;
+}
+
+/* Section Content / Cards */
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Card styles */
+.card {
+  flex: 1 1 300px;
+  padding: 2em;
+  background-color: rgb(251, 249, 249);
+  border-radius: 30px;
+  transition: 
+    transform 0.3s cubic-bezier(.25,.8,.25,1),
+    box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 4px 10px rgba(216, 14, 14, 0.1);
+  animation: fadeInUp 0.6s ease both;
+}
+
+.card:hover {
+  transform: scale(1.04) translateY(-6px) rotate(-1deg);
+  box-shadow: 0 16px 32px rgba(72, 213, 47, 0.18);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.card-header span {
+  display: inline-flex;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 40px;
+  color: white;
+  background-color: rgb(72, 213, 47);
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
+
+.card-header h2 {
+  margin-top: 1.5em;
+  font-size: 20px;
+}
+
+.card-content {
+  text-align: center;
+  color: #555;
+  font-size: 16px;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media(max-width: 767px) {
+  .section-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* Footer background color to dark green */
+footer {
+  background-color: #014b24; /* Dark Green */
+}
+
+footer a {
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ffffff; /* optional hover color for contrast */
+}
