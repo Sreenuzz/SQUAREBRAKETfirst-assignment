@@ -1,32 +1,50 @@
-/* Font Definitions */
+/* =========================
+   Base & Utility Styles
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  text-align: left; /* Default text alignment */
+  text-align: left;
+  overflow-x: hidden;
 }
 
-/* Headings */
+p {
+  max-width: 65ch;
+}
+
+/* =========================
+   Typography
+   ========================= */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   line-height: 1.2;
-  text-align: inherit; /* Inherits parent alignment */
+  text-align: inherit;
 }
 
-/* Special Cases */
 .brand-logo {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
-  text-align: left; /* Logo text alignment */
+  text-align: left;
 }
 
 .btn {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  text-align: center; /* Button text always centered */
+  text-align: center;
 }
-/* Hero Section Alignment Fix */
+
+/* =========================
+   Hero Section
+   ========================= */
 .hero {
   background: url('flightbg.jpeg') no-repeat center center/cover;
   height: 100vh;
@@ -36,179 +54,76 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   text-align: center;
 }
-
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
 .hero-content {
   z-index: 1;
   position: relative;
   max-width: 800px;
   padding: 0 20px;
   margin: 0 auto;
+  text-align: inherit;
 }
-
 .hero-content h1 {
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
-
 .hero-content p {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2rem;
 }
-
 .highlight {
   color: #28a745;
-  display: inline-block; /* Better for alignment */
+  display: inline-block;
 }
 
-/* Keep all other existing CSS exactly the same */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 0;
-}
-
-.hero-content {
-  text-align: inherit; /* Inherits from .hero */
-}
-
-/* About Section Text Alignment */
-.about-section {
-  text-align: left; /* Default left alignment */
-}
-
-/* Services Section Text Alignment */
-.services-section {
-  text-align: left; /* Default left alignment */
-}
-
-.section-header {
-  text-align: left; /* Header left aligned */
-}
-
-.section-title > h1 {
-  text-align: left; /* Title left aligned */
-}
-
-/* Card Text Alignment */
-.card {
-  text-align: center; /* Center card content */
-}
-
-.card-header {
-  text-align: inherit; /* Inherits from .card */
-}
-
-.card-content {
-  text-align: inherit; /* Inherits from .card */
-}
-
-/* Footer Text Alignment */
-footer {
-  text-align: left; /* Default left alignment */
-}
-
-footer .col-md-3 {
-  text-align: left; /* Footer columns left aligned */
-}
-
-/* Responsive Adjustments */
-@media(max-width: 767px) {
-  .hero {
-    text-align: center; /* Keep centered on mobile */
-  }
-  
-  .section-title > h1 {
-    text-align: left; /* Keep left on mobile */
-  }
-  
-  .card {
-    text-align: center; /* Keep cards centered */
-  }
-}
-
-/* Rest of your existing CSS remains exactly the same */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  line-height: 1.5;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-.green {
-  color: #28a745;
-}
-
-.hero {
-  background: url('flightbg.jpeg') no-repeat center center/cover;
-  height: 100vh;
-  position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 0;
-}
-
-.hero-content {
-  z-index: 1;
-  position: relative;
-}
-
-.highlight {
-  color: #28a745;
-}
-
+/* =========================
+   About Section
+   ========================= */
 .about-section {
   background-color: #f8f9fa;
+  text-align: left;
 }
-
 .about-section h2 {
   color: #1b4332;
 }
-
 .about-section .btn-success {
   background-color: #28a745;
   border: none;
   color: #fff;
 }
-
 .about-section .btn-success:hover {
   background-color: #7ac70c;
-  color: #fff;
+  color: #ffffff;
 }
 
+/* =========================
+   Services Section
+   ========================= */
 .services-section {
-  background: 
-    linear-gradient(to right, rgba(218, 252, 219, 0.8), rgba(255, 255, 255, 0)), 
-    url('bg.jpg') no-repeat center center/cover;
+  background: linear-gradient(to right, rgba(216, 207, 207, 0.8), rgba(52, 215, 57, 0)), url('bg.jpg') no-repeat center center/cover;
   padding: 5em;
+  text-align: left;
 }
-
 .section-header {
   margin-bottom: 3em;
+  text-align: left;
 }
-
 .section-header h1,
 .section-header h6,
 .section-header button {
   color: #012e01;
 }
-
 .section-header h6 i {
   color: rgb(72, 213, 47);
 }
-
 .section-title {
   display: flex;
   justify-content: space-between;
@@ -216,18 +131,16 @@ body {
   flex-wrap: wrap;
   align-items: center;
 }
-
 .section-title > h1 {
   font-size: 40px;
   flex: 1 1 auto;
+  text-align: left;
 }
-
 .controls {
   display: flex;
   gap: 20px;
   flex-shrink: 0;
 }
-
 .controls button {
   width: 50px;
   height: 50px;
@@ -237,88 +150,120 @@ body {
   font-size: 18px;
   transition: 0.3s all ease-in-out;
 }
-
 .controls button:hover {
   background-color: #012e01;
-  color: white;
+  color: rgb(221, 221, 221);
 }
-
 .section-content {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
-
 .card {
   flex: 1 1 300px;
   padding: 2em;
-  background-color: rgb(251, 249, 249);
+  background-color: rgb(252, 252, 252);
   border-radius: 30px;
-  transition: 
-    transform 0.3s cubic-bezier(.25,.8,.25,1),
-    box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
-  box-shadow: 0 4px 10px rgba(216, 14, 14, 0.1);
+  transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
   animation: fadeInUp 0.6s ease both;
+  text-align: center;
 }
-
 .card:hover {
   transform: scale(1.04) translateY(-6px) rotate(-1deg);
-  box-shadow: 0 16px 32px rgba(72, 213, 47, 0.18);
+  box-shadow: 0 16px 32px lab(100% 251, 249, 249, 0.1);
 }
-
 .card-header {
   margin-bottom: 1em;
+  background: none;
+  box-shadow: none;
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: inherit;
 }
-
 .card-header span {
   display: inline-flex;
   width: 80px;
   height: 80px;
   border-radius: 50%;
   font-size: 40px;
-  color: white;
-  background-color: rgb(72, 213, 47);
+  color: rgb(255, 255, 255);
+  background-color: rgb(30, 164, 7);
   align-items: center;
   justify-content: center;
   animation: pulse 2s infinite;
 }
-
 .card-header h2 {
   margin-top: 1.5em;
   font-size: 20px;
 }
-
 .card-content {
-  color: #555;
+  color: #00000089;
   font-size: 16px;
+  text-align: inherit;
+}
+.card-icon {
+  background: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  margin-right: 10px;
+  font-size: 24px;
+  color: inherit;
+}
+.card-icon i {
+  font-size: 24px;
+  color: inherit;
 }
 
+/* =========================
+   Footer Section
+   ========================= */
 footer {
   background-color: #014b24;
   background-image: url('fotterbg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  text-align: left;
+}
+footer .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .col-md-3,
+footer .col-md-4,
+footer .col-md-6,
+footer .col-md-12 {
+  text-align: left;
+}
+.navbar-nav .nav-link {
+  position: relative;
+  color: #000;
+  transition: color 0.3s ease;
 }
 
-p {
-  max-width: 65ch;
+/* Hover Effect */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #28a745; /* Green on hover or active */
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+/* Optional: underline-like effect */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #28a745;
+  transition: width 0.3s ease;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 100%;
 }
